@@ -30,7 +30,31 @@ siblings = mi_familia[:3]
 print(mis_padres)
 print(siblings)
 
+fruits = ("Piña", "Manzana", "Plantano", "Fresas")
+vegetables = ("Tomates", "Cebolla", "Ajo", "Pimiento")
+animal_products = ("Pollo", "Ternera", "Conejo", "Pescado")
+
+food_stuff_tp = fruits + vegetables + animal_products
+
+food_stuff_lt = list(food_stuff_tp)
+print(food_stuff_lt)
+print(type(food_stuff_lt))
+
+medio = len(food_stuff_lt) // 2
+print(len(food_stuff_lt))
+print(medio)
+pop_the_medio = food_stuff_lt.pop(medio)
+print(pop_the_medio)
+print(food_stuff_lt)
 
 
+del food_stuff_lt[:3]
+del food_stuff_lt[-3:]
+print(food_stuff_lt)
 
+print(food_stuff_tp)
+del food_stuff_tp
 
+nordic_countries = ('Denmark', 'Finland','Iceland', 'Norway', 'Sweden')
+print("Estonia" in nordic_countries)
+print("Iceland" in nordic_countries)
