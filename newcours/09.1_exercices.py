@@ -291,7 +291,7 @@ from countriesss import countriesss
 from collections import Counter
 
 unique_lenguage = set()
-languages_counter = Counter()
+languages_counter = Counter() 
 
 for country in countriesss:
     if "languages" in country:
@@ -300,12 +300,18 @@ for country in countriesss:
         languages_counter.update(country["languages"])
 print(unique_lenguage)
 print(len(unique_lenguage))
+
 top_language = languages_counter.most_common(10)
 print("Los 10 languages mas repetidos son:")
 for languages, count in top_language:
     print(f"{languages}: {count} veces")
 
 
+poblaciones = [(country["population"], country["name"]) for country in countriesss]
+poblaciones_ordenadas = sorted(poblaciones, reverse=True)
 
-        
+top_ten = 0
+for population in poblaciones_ordenadas[0:10]:
+    top_ten += 1
+    print(top_ten, population)   
 
