@@ -53,8 +53,77 @@ for url in url_list:
 # we will see get, status_code, headers, text and json methods requests module:
 
 # - get(): to open a network and fetch data from url - it returns a response object
-status_code: After we fetched data, we can check the status of the operation (success, error, etc)
-headers: To check the header types
-text: to extract the text from the fetched response object
-json: to extract json data Let's read a txt file from this website, https://www.w3.org/TR/PNG/iso_8859-1.txt.
+# - status_code: After we fetched data, we can check the status of the operation (success, error, etc)
+# - headers: To check the header types
+# - text: to extract the text from the fetched response object
+# - json: to extract json data Let's read a txt file from this website, https://www.w3.org/TR/PNG/iso_8859-1.txt.
 
+import requests
+
+url = 'https://www.w3.org/TR/PNG/iso_8859-1.txt'
+response = requests.get(url) # opening the network and fetching a data.
+print(response)
+print(response.status_code) # status code, success:200
+print(response.headers) # headers information
+print(response.text)
+
+# Let us read from an API. API stands for Application Program Interface. It is a means to exchange structure data between servers primarily a json data. An example of an API:https://restcountries.eu/rest/v2/all. Let us read this API using requests module.
+"""
+
+import requests
+url = 'https://restcountries.eu/rest/v2/all'
+response = requests.get(url)
+print(response.status_code)
+print(response)
+countries = response.json()
+print(countries[:1])
+
+"""
+
+# We use json() method from response object, if the we are fetching JSON data. For txt, html, xml and other file formats we can use text.
+
+# CREATING A PACKAGE
+
+# we organize a large number of files in different folders and sub-folders based on some criteria, so that we can find and manage them easily. 
+# As you know, a module can contain multiple objects, such as classes, functions, etc. 
+# A package can contain multiple objects, such as classes, functions, etc.
+# A packages is actually a folder containing one or more modules files. 
+# Let us create a package named mypackage, using the following steps:
+
+# Create a new folder named mypacakge inside your folder and create init.py file in the mypackage folder. 
+# Create modules arithmatic.py and greet.py with following code:
+
+# go to creating a packages folder.
+
+print("___________________________________________________________________________")
+
+# Now let's try it.
+
+from creating_a_packages import arithmetic
+suma = arithmetic.add_numbers(1, 2, 3, 4, 5)
+print(suma)
+resta = arithmetic.subtract(5, 3)
+print(resta)
+multiple = arithmetic.multiple(5, 32)
+print(multiple)
+division = arithmetic.division(4387, 76)
+print(division)
+remainder = arithmetic.remainder(342, 43)
+print(remainder)
+power = arithmetic.power(2, 6)
+print(power)
+
+from creating_a_packages import greet
+hola = greet.greet_person("armando", "garcia")
+print(hola)
+
+
+# As you can see our package works perfectly. 
+# The package folder contains a special file called init.py - it stores the package's content. 
+# If we put init.py in the package folder, python start recognizes it as a package. 
+# The init.py exposes specified resources from its modules to be imported to other python files. 
+# An empty init.py file makes all functions available when a package is imported. 
+# The init.py is essential for the folder to be recognized by Python as a package.
+
+
+    
